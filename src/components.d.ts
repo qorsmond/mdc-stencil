@@ -11,23 +11,28 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MdcButton {
-    'first': string;
-    'last': string;
+  interface MdcButton {}
+  interface MdcButtonAttributes extends StencilHTMLAttributes {}
+
+  interface MdcDialog {
+    'headerTitle': string;
+    'show': () => void;
   }
-  interface MdcButtonAttributes extends StencilHTMLAttributes {
-    'first'?: string;
-    'last'?: string;
+  interface MdcDialogAttributes extends StencilHTMLAttributes {
+    'headerTitle'?: string;
+    'onResult'?: (event: CustomEvent) => void;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MdcButton': Components.MdcButton;
+    'MdcDialog': Components.MdcDialog;
   }
 
   interface StencilIntrinsicElements {
     'mdc-button': Components.MdcButtonAttributes;
+    'mdc-dialog': Components.MdcDialogAttributes;
   }
 
 
@@ -37,12 +42,20 @@ declare global {
     new (): HTMLMdcButtonElement;
   };
 
+  interface HTMLMdcDialogElement extends Components.MdcDialog, HTMLStencilElement {}
+  var HTMLMdcDialogElement: {
+    prototype: HTMLMdcDialogElement;
+    new (): HTMLMdcDialogElement;
+  };
+
   interface HTMLElementTagNameMap {
     'mdc-button': HTMLMdcButtonElement
+    'mdc-dialog': HTMLMdcDialogElement
   }
 
   interface ElementTagNameMap {
     'mdc-button': HTMLMdcButtonElement;
+    'mdc-dialog': HTMLMdcDialogElement;
   }
 
 

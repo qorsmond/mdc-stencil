@@ -17,10 +17,16 @@
   },
   "dependencies": {
     "@material/button": "^0.39.1",
-    "@stencil/sass": "^0.1.0"
+    "@material/dialog": "^0.39.1",
+    "@material/form-field": "^0.39.1",
+    "@material/select": "^0.39.1",
+    "@material/textfield": "^0.39.1",
+    "@material/theme": "^0.39.1",
+    "@material/typography": "^0.39.0"
   },
   "devDependencies": {
     "@stencil/core": "0.12.4",
+    "@stencil/sass": "^0.1.0",
     "@types/jest": "^23.3.1",
     "jest": "^23.4.2"
   },

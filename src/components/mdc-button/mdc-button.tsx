@@ -1,4 +1,4 @@
-import { Component, Prop, Element } from '@stencil/core';
+import { Component, Element } from '@stencil/core';
 import { MDCRipple } from '@material/ripple';
 
 @Component({
@@ -10,9 +10,6 @@ export class MyComponent {
 
   @Element() el: HTMLElement;
 
-  @Prop() first: string;
-  @Prop() last: string;
-
   componentDidLoad() {
     var btn = this.el.shadowRoot.querySelector('.mdc-button');
     new MDCRipple(btn);
@@ -20,7 +17,7 @@ export class MyComponent {
 
   render() {
     return (
-      <button class="mdc-button">
+      <button class="mdc-button" >
         <slot />
       </button>
     );

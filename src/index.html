@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencils for Material Components for the web</title>
-  <script src="/build/mycomponent.js"></script>
+  <link rel="stylesheet" href="/build/mdc.css" />
+  <script src="/build/mdc.js"></script>
 
 </head>
+
 <body>
 
   <mdc-button>Button text</mdc-button>
 
+  <div class="mdc-typography">
+    <h1 class="mdc-typography--headline1">Big Header</h1>
+  </div>
+
+  <mdc-dialog header-title="Get this party started?">
+    Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+  </mdc-dialog>
+
+  <script>
+    var button_cmp = document.querySelector('mdc-button');
+    var dialog_cmp = document.querySelector('mdc-dialog');
+
+    button_cmp.onclick = () => {
+      dialog_cmp.show();
+    };
+
+    dialog_cmp.addEventListener('result', function (e) {
+      console.log('result', e.detail);
+    }, false);
+
+
+
+  </script>
+
 </body>
+
 </html>
