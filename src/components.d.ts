@@ -22,17 +22,39 @@ export namespace Components {
     'headerTitle'?: string;
     'onResult'?: (event: CustomEvent) => void;
   }
+
+  interface MdcSelect {}
+  interface MdcSelectAttributes extends StencilHTMLAttributes {}
+
+  interface MdcTextfield {
+    'id': string;
+    'label': string;
+    'maxWidth': string;
+    'type': string;
+    'value': string;
+  }
+  interface MdcTextfieldAttributes extends StencilHTMLAttributes {
+    'id'?: string;
+    'label'?: string;
+    'maxWidth'?: string;
+    'type'?: string;
+    'value'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MdcButton': Components.MdcButton;
     'MdcDialog': Components.MdcDialog;
+    'MdcSelect': Components.MdcSelect;
+    'MdcTextfield': Components.MdcTextfield;
   }
 
   interface StencilIntrinsicElements {
     'mdc-button': Components.MdcButtonAttributes;
     'mdc-dialog': Components.MdcDialogAttributes;
+    'mdc-select': Components.MdcSelectAttributes;
+    'mdc-textfield': Components.MdcTextfieldAttributes;
   }
 
 
@@ -48,14 +70,30 @@ declare global {
     new (): HTMLMdcDialogElement;
   };
 
+  interface HTMLMdcSelectElement extends Components.MdcSelect, HTMLStencilElement {}
+  var HTMLMdcSelectElement: {
+    prototype: HTMLMdcSelectElement;
+    new (): HTMLMdcSelectElement;
+  };
+
+  interface HTMLMdcTextfieldElement extends Components.MdcTextfield, HTMLStencilElement {}
+  var HTMLMdcTextfieldElement: {
+    prototype: HTMLMdcTextfieldElement;
+    new (): HTMLMdcTextfieldElement;
+  };
+
   interface HTMLElementTagNameMap {
     'mdc-button': HTMLMdcButtonElement
     'mdc-dialog': HTMLMdcDialogElement
+    'mdc-select': HTMLMdcSelectElement
+    'mdc-textfield': HTMLMdcTextfieldElement
   }
 
   interface ElementTagNameMap {
     'mdc-button': HTMLMdcButtonElement;
     'mdc-dialog': HTMLMdcDialogElement;
+    'mdc-select': HTMLMdcSelectElement;
+    'mdc-textfield': HTMLMdcTextfieldElement;
   }
 
 

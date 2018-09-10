@@ -1,2 +1,5 @@
 @import "@material/button/mdc-button";
 @import "@material/dialog/mdc-dialog";
+#mdc-dialog-aside {
+    z-index: 99;
+}

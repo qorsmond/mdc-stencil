@@ -1,0 +1,6 @@
+@import "@material/line-ripple/mdc-line-ripple";
+@import "@material/textfield/mdc-text-field";
+
+.mdc-text-field {
+    @include mdc-text-field-label-color(#03A9F4);
+}

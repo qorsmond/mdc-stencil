@@ -6,7 +6,7 @@ import { MDCDialog } from '@material/dialog';
   styleUrl: 'mdc-dialog.scss',
   shadow: false
 })
-export class MyComponent {
+export class DialogComponent {
 
   @Element() el: HTMLElement;
 

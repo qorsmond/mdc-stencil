@@ -6,7 +6,7 @@ import { MDCRipple } from '@material/ripple';
   styleUrl: 'mdc-button.scss',
   shadow: true
 })
-export class MyComponent {
+export class ButtonComponent {
 
   @Element() el: HTMLElement;
 

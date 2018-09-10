@@ -12,6 +12,9 @@
 
 <body>
 
+  <mdc-textfield label="My Textfield" value="Some Value"></mdc-textfield>
+  <mdc-textfield type="number" id="myNumTextfield" label="abc" value="10"></mdc-textfield>
+
   <mdc-button>Button text</mdc-button>
 
   <div class="mdc-typography">
@@ -19,7 +22,12 @@
   </div>
 
   <mdc-dialog header-title="Get this party started?">
-    Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+
+    <div>
+      <mdc-textfield id="1" label="A"></mdc-textfield>
+      <mdc-textfield id="2" label="B"></mdc-textfield>
+    </div>
+
   </mdc-dialog>
 
   <script>
