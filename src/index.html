@@ -6,29 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencils for Material Components for the web</title>
   <link rel="stylesheet" href="/build/mdc.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="/build/mdc.js"></script>
 
 </head>
 
 <body>
 
+  <div id="vueApp">
+    <mdc-textfield label="abc" v-bind:value="nameOne" v-on:input="nameOne = $event.target.value"></mdc-textfield>
+    {{ nameOne }}
+
+    <mdc-button v-on:click="updateTxt()">Update abc</mdc-button>
+    <mdc-textfield id="100" label="Az" v-bind:value="nameTwo" v-on:input="nameTwo = $event.target.value"></mdc-textfield>
+
+    <mdc-dialog header-title="Get this party started?">
+
+      <div>
+        <mdc-textfield id="1" label="A" v-bind:value="nameTwo" v-on:input="nameTwo = $event.target.value"></mdc-textfield>
+        <mdc-textfield id="2" label="B"></mdc-textfield>
+      </div>
+
+    </mdc-dialog>
+  </div>
+
+
   <mdc-textfield label="My Textfield" value="Some Value"></mdc-textfield>
   <mdc-textfield type="number" id="myNumTextfield" label="abc" value="10"></mdc-textfield>
 
   <mdc-button>Button text</mdc-button>
 
+
   <div class="mdc-typography">
     <h1 class="mdc-typography--headline1">Big Header</h1>
   </div>
 
-  <mdc-dialog header-title="Get this party started?">
 
-    <div>
-      <mdc-textfield id="1" label="A"></mdc-textfield>
-      <mdc-textfield id="2" label="B"></mdc-textfield>
-    </div>
-
-  </mdc-dialog>
 
   <script>
     var button_cmp = document.querySelector('mdc-button');
@@ -42,8 +55,46 @@
       console.log('result', e.detail);
     }, false);
 
+    var somePromice = function () {
+      return new Promise((resolve) => {
+        resolve({a:1});
+      });
+    }
 
+    // testing integration with vuejs
 
+    Vue.config.ignoredElements = [
+        'mdc-dialog',
+        'mdc-textfield'
+    ];
+
+    new Vue({
+      el: '#vueApp',
+      data: function () {
+        return {
+          nameOne: 'test',
+          nameTwo: ''
+        }
+      },
+      methods: {
+        onInput: function (data) {
+          console.log('data', data)
+        },
+        updateTxt: function () {
+          // console.log('updateTxt');
+           this.nameTwo = 'zaa';
+
+          // somePromice().then(data => {
+          //   console.log('data', data);
+
+          //   this.nameTwo = 'tezz';
+
+          //   var dialog_cmp = document.querySelector('mdc-dialog');
+          //   dialog_cmp.show();
+          // });
+        }
+      }
+    });
   </script>
 
 </body>

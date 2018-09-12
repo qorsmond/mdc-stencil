@@ -1,6 +1,6 @@
 import { Component, Element, Prop } from '@stencil/core';
 import { MDCTextField } from '@material/textfield';
-import {MDCLineRipple} from '@material/line-ripple';
+import { MDCLineRipple } from '@material/line-ripple';
 
 @Component({
   tag: 'mdc-textfield',
@@ -16,7 +16,6 @@ export class TextfieldComponent {
   @Prop() label: string;
   @Prop() value: string;
   @Prop() type: string = 'text';
-
   @Prop() maxWidth: string;
 
 
