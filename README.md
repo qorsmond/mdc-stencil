@@ -11,8 +11,13 @@ More about [Stencil](https://stenciljs.com/)
 # MDC Components
 
 ## mdc-button
+Use as a normal button
 ```
 <mdc-button>Some text</mdc-button>
+```
+Use as a link button
+```
+<mdc-button href="/myroute">Some text</mdc-button>
 ```
 
 ## mdc-textfield
