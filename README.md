@@ -13,6 +13,12 @@ More about [Stencil](https://stenciljs.com/)
 npm i mdc-stencil --s
 ```
 
+## Script tag
+```
+<link rel="stylesheet" href="https://unpkg.com/mdc-stencil/dist/mdc.css">
+<script src='https://unpkg.com/mdc-stencil/dist/mdc.js'></script>
+```
+
 # MDC Components
 
 ## mdc-button
