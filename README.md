@@ -8,6 +8,11 @@ Please note this is a work in progress and not suitable for production use.
 
 More about [Stencil](https://stenciljs.com/)
 
+# Install
+```
+npm i mdc-stencil --s
+```
+
 # MDC Components
 
 ## mdc-button
