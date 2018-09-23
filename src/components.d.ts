@@ -11,8 +11,12 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MdcButton {}
-  interface MdcButtonAttributes extends StencilHTMLAttributes {}
+  interface MdcButton {
+    'href': string;
+  }
+  interface MdcButtonAttributes extends StencilHTMLAttributes {
+    'href'?: string;
+  }
 
   interface MdcDialog {
     'headerTitle': string;
