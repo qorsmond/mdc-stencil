@@ -14,7 +14,7 @@ npm i mdc-stencil --s
 ```
 
 ## Script tag
-```
+```html
 <link rel="stylesheet" href="https://unpkg.com/mdc-stencil/dist/mdc.css">
 <script src='https://unpkg.com/mdc-stencil/dist/mdc.js'></script>
 ```
@@ -23,15 +23,15 @@ npm i mdc-stencil --s
 
 ## mdc-button
 Use as a normal button
-```
+```html
 <mdc-button>Some text</mdc-button>
 ```
 Use as a link button
-```
+```html
 <mdc-button href="/myroute">Some text</mdc-button>
 ```
 
 ## mdc-textfield
-```
+```html
 <mdc-textfield label="My Textfield" value="Some Value"></mdc-textfield>
 ```
