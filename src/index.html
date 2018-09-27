@@ -9,13 +9,53 @@
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="/build/mdc.js"></script>
 
+  <style>
+    .showcase{
+      margin: 20px;
+    }
+    .light {
+        --mdc-theme-on-primary: black;
+        --mdc-theme-primary: white;
+        --mdc-theme-on-secondary: black;
+        --mdc-theme-secondary: white;
+      }
+  
+      .pink {
+        --mdc-theme-on-primary: white;
+        --mdc-theme-primary: #e9437a;
+        --mdc-theme-on-secondary: white;
+        --mdc-theme-secondary: #e9437a;
+      }
+  
+      .wide {
+        width: 250px;
+      }
+    </style>
 </head>
 
-<body>
+<body class="mdc-typography">
+
+  <h4>Button</h4>
+  <div class="showcase">
+    <mdc-button>Normal</mdc-button>
+    <mdc-button label="Normal"></mdc-button>
+    <mdc-button icon="explore">Normal</mdc-button>
+    <mdc-button class="light" raised>raised</mdc-button>
+    <mdc-button unelevated>unelevated</mdc-button>
+    <mdc-button outlined>outlined</mdc-button>
+    <mdc-button class="pink" dense>dense</mdc-button>
+    <mdc-button class="pink wide" raised>wide</mdc-button>
+    <mdc-button disabled>disabled</mdc-button>
+
+    <mdc-button href="/">Link</mdc-button>
+  </div>
+
+
 
   <div id="vueApp">
     <mdc-textfield label="abc" v-bind:value="nameOne" v-on:input="nameOne = $event.target.value"></mdc-textfield>
     {{ nameOne }}
+
 
     <mdc-button v-on:click="updateTxt()">Update abc</mdc-button>
     <mdc-textfield id="100" label="Az" v-bind:value="nameTwo" v-on:input="nameTwo = $event.target.value"></mdc-textfield>
@@ -37,7 +77,7 @@
   <mdc-button href="/test">Link Button text</mdc-button>
 
 
-  <div class="mdc-typography">
+  <div>
     <h1 class="mdc-typography--headline1">Big Header</h1>
   </div>
 
@@ -57,15 +97,15 @@
 
     var somePromice = function () {
       return new Promise((resolve) => {
-        resolve({a:1});
+        resolve({ a: 1 });
       });
     }
 
     // testing integration with vuejs
 
     Vue.config.ignoredElements = [
-        'mdc-dialog',
-        'mdc-textfield'
+      'mdc-dialog',
+      'mdc-textfield'
     ];
 
     new Vue({
@@ -82,7 +122,7 @@
         },
         updateTxt: function () {
           // console.log('updateTxt');
-           this.nameTwo = 'zaa';
+          this.nameTwo = 'zaa';
 
           // somePromice().then(data => {
           //   console.log('data', data);

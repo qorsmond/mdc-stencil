@@ -12,10 +12,24 @@ import '@stencil/core';
 export namespace Components {
 
   interface MdcButton {
+    'dense': boolean;
+    'disabled': boolean;
     'href': string;
+    'icon': boolean;
+    'label': string;
+    'outlined': boolean;
+    'raised': boolean;
+    'unelevated': boolean;
   }
   interface MdcButtonAttributes extends StencilHTMLAttributes {
+    'dense'?: boolean;
+    'disabled'?: boolean;
     'href'?: string;
+    'icon'?: boolean;
+    'label'?: string;
+    'outlined'?: boolean;
+    'raised'?: boolean;
+    'unelevated'?: boolean;
   }
 
   interface MdcDialog {
