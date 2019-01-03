@@ -1,6 +1,6 @@
 import { Component, Element, Prop } from '@stencil/core';
-import { MDCTextField } from '@material/textfield';
-import { MDCLineRipple } from '@material/line-ripple';
+import { MDCTextField } from '@material/textfield/index';
+import { MDCLineRipple } from '@material/line-ripple/index';
 
 @Component({
   tag: 'mdc-textfield',
@@ -33,7 +33,7 @@ export class TextfieldComponent {
     return (
       <div class="mdc-text-field" style={styling}>
         <input type={this.type} id={this.id} class="mdc-text-field__input" step="any" value={this.value} />
-        <label class="mdc-floating-label" htmlfor={this.id}>{this.label}</label>
+        <label class="mdc-floating-label" htmlFor={this.id}>{this.label}</label>
         <div class="mdc-line-ripple"></div>
       </div>
     );

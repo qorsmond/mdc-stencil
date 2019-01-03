@@ -87,10 +87,13 @@
     var button_cmp = document.querySelector('mdc-button');
     var dialog_cmp = document.querySelector('mdc-dialog');
 
-    button_cmp.onclick = () => {
-      dialog_cmp.show();
+    button_cmp.onclick = function () {
+      dialog_cmp = document.querySelector('mdc-dialog');
+      dialog_cmp.open();
     };
-
+        
+    
+    var dialog_cmp = document.querySelector('mdc-dialog');
     dialog_cmp.addEventListener('result', function (e) {
       console.log('result', e.detail);
     }, false);

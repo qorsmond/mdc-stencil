@@ -35,7 +35,8 @@ export namespace Components {
 
   interface MdcDialog {
     'headerTitle': string;
-    'show': () => void;
+    'log': () => void;
+    'open': () => void;
   }
   interface MdcDialogAttributes extends StencilHTMLAttributes {
     'headerTitle'?: string;

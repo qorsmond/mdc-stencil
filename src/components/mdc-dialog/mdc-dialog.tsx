@@ -1,64 +1,67 @@
 import { Component, Element, Method, Prop, Event, EventEmitter } from '@stencil/core';
-import { MDCDialog } from '@material/dialog';
+import { MDCDialog } from '@material/dialog/index';
 
 @Component({
   tag: 'mdc-dialog',
-  styleUrl: 'mdc-dialog.scss',
-  shadow: false
+  styleUrl: 'mdc-dialog.scss'
 })
 export class DialogComponent {
 
   @Element() el: HTMLElement;
+  private dialog;
+  @Event() result: EventEmitter;
 
   @Prop() headerTitle: string;
 
-  @Method() show() {
-    this.dialog.show();
+  @Method() log() {
+    console.log('log');
   }
 
-  @Event() result: EventEmitter;
+  @Method() open() {
+    this.dialog.open();
+  }
 
-
-  private dialog;
 
   componentDidLoad() {
-    const dialogEl = this.el.querySelector('#mdc-dialog-aside');
+    const dialogEl = this.el.querySelector('.mdc-dialog');
     this.dialog = new MDCDialog(dialogEl);
 
-    this.dialog.listen('MDCDialog:accept', () => {
-      console.log('accepted');
-      this.result.emit('accepted');
-    })
+    // this.dialog.listen('MDCDialog:accept', () => {
+    //   console.log('accepted');
+    //   this.result.emit('accepted');
+    // })
 
-    this.dialog.listen('MDCDialog:cancel', () => {
-      console.log('canceled')
-      this.result.emit('canceled');
-    })
+    // this.dialog.listen('MDCDialog:cancel', () => {
+    //   console.log('canceled')
+    //   this.result.emit('canceled');
+    // })
   }
 
   render() {
     return (
-      <aside id="mdc-dialog-aside"
-        class="mdc-dialog"
+      <div class="mdc-dialog"
         role="alertdialog"
-        aria-labelledby="my-mdc-dialog-label"
-        aria-describedby="my-mdc-dialog-description">
-        <div class="mdc-dialog__surface">
-          <header class="mdc-dialog__header">
-            <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
-              {this.headerTitle}
-            </h2>
-          </header>
-          <section id="my-mdc-dialog-description" class="mdc-dialog__body">
-            <slot />
-          </section>
-          <footer class="mdc-dialog__footer">
-            <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
-            <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Accept</button>
-          </footer>
+        aria-modal="true"
+        aria-labelledby="my-dialog-title"
+        aria-describedby="my-dialog-content">
+        <div class="mdc-dialog__container">
+          <div class="mdc-dialog__surface">
+            <h2 class="mdc-dialog__title" id="my-dialog-title">{this.headerTitle}</h2>
+            <div class="mdc-dialog__content" id="my-dialog-content">
+              <slot />
+            </div>
+            <footer class="mdc-dialog__actions">
+              <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+                <span class="mdc-button__label">No</span>
+              </button>
+              <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+                <span class="mdc-button__label">Yes</span>
+              </button>
+            </footer>
+          </div>
         </div>
-        <div class="mdc-dialog__backdrop"></div>
-      </aside>
+        <div class="mdc-dialog__scrim"></div>
+      </div>
     );
   }
 }

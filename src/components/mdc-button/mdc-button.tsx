@@ -1,5 +1,5 @@
 import { Component, Element, Prop } from '@stencil/core';
-import { MDCRipple } from '@material/ripple';
+import { MDCRipple } from '@material/ripple/index';
 
 @Component({
   tag: 'mdc-button',
@@ -23,8 +23,6 @@ export class ButtonComponent {
     var btn = this.el.shadowRoot.querySelector('.mdc-button');
     new MDCRipple(btn);
   }
-
-
 
   render() {
 

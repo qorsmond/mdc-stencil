@@ -1,5 +1,5 @@
 import { Component, Element } from '@stencil/core';
-import { MDCSelect } from '@material/select';
+import { MDCSelect } from '@material/select/index';
 
 @Component({
   tag: 'mdc-select',
@@ -35,7 +35,7 @@ export class SelectComponent {
           Noodles
         </option>
       </select>
-      <label class="mdc-floating-label mdc-floating-label--float-above" htmlfor="select-preselected">Food Group</label>
+      <label class="mdc-floating-label mdc-floating-label--float-above" htmlFor="select-preselected">Food Group</label>
       <div class="mdc-line-ripple"></div>
     </div>
     );
