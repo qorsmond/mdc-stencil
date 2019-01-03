@@ -26,8 +26,8 @@
     "@material/typography": "^0.39.0"
   },
   "devDependencies": {
-    "@stencil/core": "0.12.4",
-    "@stencil/sass": "^0.1.0",
+    "@stencil/core": "0.16.1",
+    "@stencil/sass": "^0.1.1",
     "@types/jest": "^23.3.1",
     "jest": "^23.4.2"
   },
