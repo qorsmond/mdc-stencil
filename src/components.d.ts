@@ -5,124 +5,67 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-
-  interface MdcButton {
-    'dense': boolean;
-    'disabled': boolean;
-    'href': string;
-    'icon': boolean;
-    'label': string;
-    'outlined': boolean;
-    'raised': boolean;
-    'unelevated': boolean;
-  }
-  interface MdcButtonAttributes extends StencilHTMLAttributes {
-    'dense'?: boolean;
-    'disabled'?: boolean;
-    'href'?: string;
-    'icon'?: boolean;
-    'label'?: string;
-    'outlined'?: boolean;
-    'raised'?: boolean;
-    'unelevated'?: boolean;
-  }
-
-  interface MdcDialog {
-    'headerTitle': string;
-    'log': () => void;
-    'open': () => void;
-  }
-  interface MdcDialogAttributes extends StencilHTMLAttributes {
-    'headerTitle'?: string;
-    'onResult'?: (event: CustomEvent) => void;
-  }
-
-  interface MdcSelect {}
-  interface MdcSelectAttributes extends StencilHTMLAttributes {}
-
-  interface MdcTextfield {
-    'id': string;
-    'label': string;
-    'maxWidth': string;
-    'type': string;
-    'value': string;
-  }
-  interface MdcTextfieldAttributes extends StencilHTMLAttributes {
-    'id'?: string;
-    'label'?: string;
-    'maxWidth'?: string;
-    'type'?: string;
-    'value'?: string;
+  interface MyComponent {
+    /**
+    * The first name
+    */
+    'first': string;
+    /**
+    * The last name
+    */
+    'last': string;
+    /**
+    * The middle name
+    */
+    'middle': string;
   }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'MdcButton': Components.MdcButton;
-    'MdcDialog': Components.MdcDialog;
-    'MdcSelect': Components.MdcSelect;
-    'MdcTextfield': Components.MdcTextfield;
-  }
-
-  interface StencilIntrinsicElements {
-    'mdc-button': Components.MdcButtonAttributes;
-    'mdc-dialog': Components.MdcDialogAttributes;
-    'mdc-select': Components.MdcSelectAttributes;
-    'mdc-textfield': Components.MdcTextfieldAttributes;
-  }
 
 
-  interface HTMLMdcButtonElement extends Components.MdcButton, HTMLStencilElement {}
-  var HTMLMdcButtonElement: {
-    prototype: HTMLMdcButtonElement;
-    new (): HTMLMdcButtonElement;
+  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
+  var HTMLMyComponentElement: {
+    prototype: HTMLMyComponentElement;
+    new (): HTMLMyComponentElement;
   };
-
-  interface HTMLMdcDialogElement extends Components.MdcDialog, HTMLStencilElement {}
-  var HTMLMdcDialogElement: {
-    prototype: HTMLMdcDialogElement;
-    new (): HTMLMdcDialogElement;
-  };
-
-  interface HTMLMdcSelectElement extends Components.MdcSelect, HTMLStencilElement {}
-  var HTMLMdcSelectElement: {
-    prototype: HTMLMdcSelectElement;
-    new (): HTMLMdcSelectElement;
-  };
-
-  interface HTMLMdcTextfieldElement extends Components.MdcTextfield, HTMLStencilElement {}
-  var HTMLMdcTextfieldElement: {
-    prototype: HTMLMdcTextfieldElement;
-    new (): HTMLMdcTextfieldElement;
-  };
-
   interface HTMLElementTagNameMap {
-    'mdc-button': HTMLMdcButtonElement
-    'mdc-dialog': HTMLMdcDialogElement
-    'mdc-select': HTMLMdcSelectElement
-    'mdc-textfield': HTMLMdcTextfieldElement
+    'my-component': HTMLMyComponentElement;
   }
-
-  interface ElementTagNameMap {
-    'mdc-button': HTMLMdcButtonElement;
-    'mdc-dialog': HTMLMdcDialogElement;
-    'mdc-select': HTMLMdcSelectElement;
-    'mdc-textfield': HTMLMdcTextfieldElement;
-  }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+    /**
+    * The first name
+    */
+    'first'?: string;
+    /**
+    * The last name
+    */
+    'last'?: string;
+    /**
+    * The middle name
+    */
+    'middle'?: string;
+  }
+
+  interface IntrinsicElements {
+    'my-component': MyComponent;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+

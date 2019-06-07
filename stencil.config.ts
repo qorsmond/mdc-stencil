@@ -1,7 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
-
 export const config: Config = {
   namespace: 'mdc',
   plugins: [
@@ -9,14 +8,18 @@ export const config: Config = {
       includePaths: ["node_modules"]
     })
   ],
-  globalStyle: 'src/global/variables.scss',
+  globalStyle: 'src/globals/style.scss',
   outputTargets: [
     {
-      type: 'dist'
+      type: 'dist',
+      esmLoaderPath: '../loader'
+    },
+    {
+      type: 'docs-readme'
     },
     {
       type: 'www',
-      serviceWorker: null
+      serviceWorker: null // disable service workers
     }
   ]
 };

@@ -1,39 +1,28 @@
 {
   "name": "mdc-stencil",
-  "version": "0.0.1",
-  "description": "Stencils for Material Components for the web",
-  "module": "dist/esm/index.js",
+  "version": "0.0.2",
+  "description": "Material Design implemented using the Stencil Compiler for Web Components",
   "main": "dist/index.js",
-  "types": "dist/types/components.d.ts",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/mdc-stencil/mdc-stencil.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "jest",
-    "test.watch": "jest --watch"
-  },
-  "dependencies": {
-    "@material/button": "^0.42.0",
-    "@material/dialog": "^0.42.0",
-    "@material/elevation": "^0.41.0",
-    "@material/floating-label": "^0.42.0",
-    "@material/form-field": "^0.42.0",
-    "@material/line-ripple": "^0.41.0",
-    "@material/notched-outline": "^0.42.1",
-    "@material/ripple": "^0.42.0",
-    "@material/select": "^0.42.1",
-    "@material/textfield": "^0.42.1",
-    "@material/theme": "^0.41.0",
-    "@material/typography": "^0.42.0"
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "0.16.1",
-    "@stencil/sass": "^0.1.1",
-    "@types/jest": "^23.3.1",
-    "jest": "^23.4.2"
+    "@stencil/core": "1.0.0-beta.8",
+    "@stencil/sass": "^0.2.3"
   },
   "repository": {
     "type": "git",
@@ -44,18 +33,5 @@
   "bugs": {
     "url": "https://github.com/qorsmond/mdc-stencil/issues"
   },
-  "homepage": "https://github.com/qorsmond/mdc-stencil",
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
-  }
+  "homepage": "https://github.com/qorsmond/mdc-stencil"
 }

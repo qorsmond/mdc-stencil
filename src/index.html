@@ -1,145 +1,17 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencils for Material Components for the web</title>
-  <link rel="stylesheet" href="/build/mdc.css" />
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="/build/mdc.js"></script>
+  <title>Stencil Component Starter</title>
 
-  <style>
-    .showcase{
-      margin: 20px;
-    }
-    .light {
-        --mdc-theme-on-primary: black;
-        --mdc-theme-primary: white;
-        --mdc-theme-on-secondary: black;
-        --mdc-theme-secondary: white;
-      }
-  
-      .pink {
-        --mdc-theme-on-primary: white;
-        --mdc-theme-primary: #e9437a;
-        --mdc-theme-on-secondary: white;
-        --mdc-theme-secondary: #e9437a;
-      }
-  
-      .wide {
-        width: 250px;
-      }
-    </style>
+  <script type="module" src="/build/mdc-stencil.esm.js"></script>
+  <script nomodule src="/build/mdc-stencil.js"></script>
+
 </head>
+<body>
 
-<body class="mdc-typography">
-
-  <h4>Button</h4>
-  <div class="showcase">
-    <mdc-button>Normal</mdc-button>
-    <mdc-button label="Normal"></mdc-button>
-    <mdc-button icon="explore">Normal</mdc-button>
-    <mdc-button class="light" raised>raised</mdc-button>
-    <mdc-button unelevated>unelevated</mdc-button>
-    <mdc-button outlined>outlined</mdc-button>
-    <mdc-button class="pink" dense>dense</mdc-button>
-    <mdc-button class="pink wide" raised>wide</mdc-button>
-    <mdc-button disabled>disabled</mdc-button>
-
-    <mdc-button href="/">Link</mdc-button>
-  </div>
-
-
-
-  <div id="vueApp">
-    <mdc-textfield label="abc" v-bind:value="nameOne" v-on:input="nameOne = $event.target.value"></mdc-textfield>
-    {{ nameOne }}
-
-
-    <mdc-button v-on:click="updateTxt()">Update abc</mdc-button>
-    <mdc-textfield id="100" label="Az" v-bind:value="nameTwo" v-on:input="nameTwo = $event.target.value"></mdc-textfield>
-
-    <mdc-dialog header-title="Get this party started?">
-
-      <div>
-        <mdc-textfield id="1" label="A" v-bind:value="nameTwo" v-on:input="nameTwo = $event.target.value"></mdc-textfield>
-        <mdc-textfield id="2" label="B"></mdc-textfield>
-      </div>
-
-    </mdc-dialog>
-  </div>
-
-
-  <mdc-textfield label="My Textfield" value="Some Value"></mdc-textfield>
-  <mdc-textfield type="number" id="myNumTextfield" label="abc" value="10"></mdc-textfield>
-
-  <mdc-button href="/test">Link Button text</mdc-button>
-
-
-  <div>
-    <h1 class="mdc-typography--headline1">Big Header</h1>
-  </div>
-
-
-
-  <script>
-    var button_cmp = document.querySelector('mdc-button');
-    var dialog_cmp = document.querySelector('mdc-dialog');
-
-    button_cmp.onclick = function () {
-      dialog_cmp = document.querySelector('mdc-dialog');
-      dialog_cmp.open();
-    };
-        
-    
-    var dialog_cmp = document.querySelector('mdc-dialog');
-    dialog_cmp.addEventListener('result', function (e) {
-      console.log('result', e.detail);
-    }, false);
-
-    var somePromice = function () {
-      return new Promise((resolve) => {
-        resolve({ a: 1 });
-      });
-    }
-
-    // testing integration with vuejs
-
-    Vue.config.ignoredElements = [
-      'mdc-dialog',
-      'mdc-textfield'
-    ];
-
-    new Vue({
-      el: '#vueApp',
-      data: function () {
-        return {
-          nameOne: 'test',
-          nameTwo: ''
-        }
-      },
-      methods: {
-        onInput: function (data) {
-          console.log('data', data)
-        },
-        updateTxt: function () {
-          // console.log('updateTxt');
-          this.nameTwo = 'zaa';
-
-          // somePromice().then(data => {
-          //   console.log('data', data);
-
-          //   this.nameTwo = 'tezz';
-
-          //   var dialog_cmp = document.querySelector('mdc-dialog');
-          //   dialog_cmp.show();
-          // });
-        }
-      }
-    });
-  </script>
+  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
 
 </body>
-
 </html>
