@@ -1,0 +1,19 @@
+@import "@material/button/mdc-button";
+@import "@material/icon-button/mdc-icon-button";
+
+mdc-button {
+    display: inline-flex;
+    outline: none;
+}
+
+mdc-button:disabled {
+    pointer-events: none;
+}
+
+.mdc-button {
+    flex: 1;
+}
+
+button {
+    width: inherit;
+}

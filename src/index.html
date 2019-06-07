@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>Material Web Components Catalog</title>
 
-  <script type="module" src="/build/mdc-stencil.esm.js"></script>
-  <script nomodule src="/build/mdc-stencil.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script type="module" src="/build/mdc.esm.js"></script>
+  <script nomodule src="/build/mdc.js"></script>
+
+  <link rel="stylesheet" href="demos/demo-component.css">
 
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <demo-view></demo-view>
 
 </body>
 </html>

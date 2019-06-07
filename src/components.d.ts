@@ -9,6 +9,42 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface DemoView {}
+  interface MdcButton {
+    /**
+    * Makes the button text and container slightly smaller.
+    */
+    'dense': boolean;
+    /**
+    * Disabled buttons cannot be interacted with and have no visual interaction effect.
+    */
+    'disabled': boolean;
+    /**
+    * Indicates the element containing the button's icon.
+    */
+    'icon': string;
+    /**
+    * Indicates the element containing the button's text label.
+    */
+    'label': string;
+    /**
+    * Styles an outlined button that is flush with the surface.
+    */
+    'outlined': boolean;
+    /**
+    * Styles a contained button that is elevated above the surface.
+    */
+    'raised': boolean;
+    /**
+    * Indicates if the icon is a trailingIcon.
+    */
+    'trailingIcon': boolean;
+    /**
+    * Styles a contained button that is flush with the surface.
+    */
+    'unelevated': boolean;
+  }
+  interface MdcIcon {}
   interface MyComponent {
     /**
     * The first name
@@ -28,17 +64,74 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLDemoViewElement extends Components.DemoView, HTMLStencilElement {}
+  var HTMLDemoViewElement: {
+    prototype: HTMLDemoViewElement;
+    new (): HTMLDemoViewElement;
+  };
+
+  interface HTMLMdcButtonElement extends Components.MdcButton, HTMLStencilElement {}
+  var HTMLMdcButtonElement: {
+    prototype: HTMLMdcButtonElement;
+    new (): HTMLMdcButtonElement;
+  };
+
+  interface HTMLMdcIconElement extends Components.MdcIcon, HTMLStencilElement {}
+  var HTMLMdcIconElement: {
+    prototype: HTMLMdcIconElement;
+    new (): HTMLMdcIconElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'demo-view': HTMLDemoViewElement;
+    'mdc-button': HTMLMdcButtonElement;
+    'mdc-icon': HTMLMdcIconElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface DemoView extends JSXBase.HTMLAttributes<HTMLDemoViewElement> {}
+  interface MdcButton extends JSXBase.HTMLAttributes<HTMLMdcButtonElement> {
+    /**
+    * Makes the button text and container slightly smaller.
+    */
+    'dense'?: boolean;
+    /**
+    * Disabled buttons cannot be interacted with and have no visual interaction effect.
+    */
+    'disabled'?: boolean;
+    /**
+    * Indicates the element containing the button's icon.
+    */
+    'icon'?: string;
+    /**
+    * Indicates the element containing the button's text label.
+    */
+    'label'?: string;
+    /**
+    * Styles an outlined button that is flush with the surface.
+    */
+    'outlined'?: boolean;
+    /**
+    * Styles a contained button that is elevated above the surface.
+    */
+    'raised'?: boolean;
+    /**
+    * Indicates if the icon is a trailingIcon.
+    */
+    'trailingIcon'?: boolean;
+    /**
+    * Styles a contained button that is flush with the surface.
+    */
+    'unelevated'?: boolean;
+  }
+  interface MdcIcon extends JSXBase.HTMLAttributes<HTMLMdcIconElement> {}
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
@@ -55,6 +148,9 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'demo-view': DemoView;
+    'mdc-button': MdcButton;
+    'mdc-icon': MdcIcon;
     'my-component': MyComponent;
   }
 }
