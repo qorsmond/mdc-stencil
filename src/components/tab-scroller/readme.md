@@ -5,14 +5,18 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
+## Dependencies
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+### Used by
 
+ - [mdc-tab-bar](..\tab-bar)
+
+### Graph
+```mermaid
+graph TD;
+  mdc-tab-bar --> mdc-tab-scroller
+  style mdc-tab-scroller fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -1,0 +1,1 @@
+function e(e,t){return(e.matches||e.webkitMatchesSelector||e.msMatchesSelector).call(e,t)}export{e as m};
