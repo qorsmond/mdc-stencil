@@ -108,7 +108,7 @@ export class DemoView {
                   <span class="mdc-list-item__secondary-text">On off switches</span>
               </span>
             </a>
-            <a role="listitem" class="mdc-list-item" href="tabs.html">
+            <a role="listitem" class="mdc-list-item" href="demos/tabs.html">
               <span class="demo-catalog-list-icon mdc-list-item__graphic"><img src="https://material-components-web.appspot.com/images/ic_tabs_24px.svg"></img></span>
               <span class="mdc-list-item__text">
                 Tabs

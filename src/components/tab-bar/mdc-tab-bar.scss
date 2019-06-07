@@ -1,0 +1,10 @@
+@import "@material/tab-bar/mdc-tab-bar";
+
+.mdc-tab-bar {
+    flex: 1;
+    width: 100%;
+}
+
+.bottom-border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}

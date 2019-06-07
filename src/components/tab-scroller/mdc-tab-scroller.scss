@@ -1,0 +1,10 @@
+@import "@material/tab-scroller/mdc-tab-scroller";
+
+mdc-tab-scroller {
+    display: flex;
+    width: 100%;
+}
+
+.mdc-tab-scroller {
+    flex: 1;
+}

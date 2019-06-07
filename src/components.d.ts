@@ -45,6 +45,33 @@ export namespace Components {
     'unelevated': boolean;
   }
   interface MdcIcon {}
+  interface MdcTab {
+    /**
+    * The icon
+    */
+    'icon': string;
+    /**
+    * The label
+    */
+    'label': string;
+    /**
+    * Visually activates the indicator
+    */
+    'selected': boolean;
+  }
+  interface MdcTabBar {
+    /**
+    * Should a bottom border be displayed
+    */
+    'bottomBorder': boolean;
+  }
+  interface MdcTabIndicator {
+    /**
+    * Visually activates the indicator
+    */
+    'isActive': boolean;
+  }
+  interface MdcTabScroller {}
   interface MyComponent {
     /**
     * The first name
@@ -82,6 +109,30 @@ declare global {
     new (): HTMLMdcIconElement;
   };
 
+  interface HTMLMdcTabElement extends Components.MdcTab, HTMLStencilElement {}
+  var HTMLMdcTabElement: {
+    prototype: HTMLMdcTabElement;
+    new (): HTMLMdcTabElement;
+  };
+
+  interface HTMLMdcTabBarElement extends Components.MdcTabBar, HTMLStencilElement {}
+  var HTMLMdcTabBarElement: {
+    prototype: HTMLMdcTabBarElement;
+    new (): HTMLMdcTabBarElement;
+  };
+
+  interface HTMLMdcTabIndicatorElement extends Components.MdcTabIndicator, HTMLStencilElement {}
+  var HTMLMdcTabIndicatorElement: {
+    prototype: HTMLMdcTabIndicatorElement;
+    new (): HTMLMdcTabIndicatorElement;
+  };
+
+  interface HTMLMdcTabScrollerElement extends Components.MdcTabScroller, HTMLStencilElement {}
+  var HTMLMdcTabScrollerElement: {
+    prototype: HTMLMdcTabScrollerElement;
+    new (): HTMLMdcTabScrollerElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -91,6 +142,10 @@ declare global {
     'demo-view': HTMLDemoViewElement;
     'mdc-button': HTMLMdcButtonElement;
     'mdc-icon': HTMLMdcIconElement;
+    'mdc-tab': HTMLMdcTabElement;
+    'mdc-tab-bar': HTMLMdcTabBarElement;
+    'mdc-tab-indicator': HTMLMdcTabIndicatorElement;
+    'mdc-tab-scroller': HTMLMdcTabScrollerElement;
     'my-component': HTMLMyComponentElement;
   }
 }
@@ -132,6 +187,33 @@ declare namespace LocalJSX {
     'unelevated'?: boolean;
   }
   interface MdcIcon extends JSXBase.HTMLAttributes<HTMLMdcIconElement> {}
+  interface MdcTab extends JSXBase.HTMLAttributes<HTMLMdcTabElement> {
+    /**
+    * The icon
+    */
+    'icon'?: string;
+    /**
+    * The label
+    */
+    'label'?: string;
+    /**
+    * Visually activates the indicator
+    */
+    'selected'?: boolean;
+  }
+  interface MdcTabBar extends JSXBase.HTMLAttributes<HTMLMdcTabBarElement> {
+    /**
+    * Should a bottom border be displayed
+    */
+    'bottomBorder'?: boolean;
+  }
+  interface MdcTabIndicator extends JSXBase.HTMLAttributes<HTMLMdcTabIndicatorElement> {
+    /**
+    * Visually activates the indicator
+    */
+    'isActive'?: boolean;
+  }
+  interface MdcTabScroller extends JSXBase.HTMLAttributes<HTMLMdcTabScrollerElement> {}
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
@@ -151,6 +233,10 @@ declare namespace LocalJSX {
     'demo-view': DemoView;
     'mdc-button': MdcButton;
     'mdc-icon': MdcIcon;
+    'mdc-tab': MdcTab;
+    'mdc-tab-bar': MdcTabBar;
+    'mdc-tab-indicator': MdcTabIndicator;
+    'mdc-tab-scroller': MdcTabScroller;
     'my-component': MyComponent;
   }
 }

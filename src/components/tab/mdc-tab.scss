@@ -1,0 +1,17 @@
+@import "@material/tab/mdc-tab";
+
+mdc-tab {
+    outline: none;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.mdc-tab {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .mdc-tab::-moz-focus-inner {
+    border: 0;
+  }
