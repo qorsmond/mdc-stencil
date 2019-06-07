@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>button demo</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script type="module" src="/build/mdc.esm.js"></script>
+  <script nomodule src="/build/mdc.js"></script>
+
+  <link rel="stylesheet" href="demo-component.css">
+
+  <style>
+    .light {
+      --mdc-theme-on-primary: black;
+      --mdc-theme-primary: white;
+      --mdc-theme-on-secondary: black;
+      --mdc-theme-secondary: white;
+    }
+
+    .pink {
+      --mdc-theme-on-primary: white;
+      --mdc-theme-primary: #e9437a;
+      --mdc-theme-on-secondary: white;
+      --mdc-theme-secondary: #e9437a;
+    }
+
+    .wide {
+      width: 250px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <a href="/index.html">
+      <mdc-icon>arrow_back</mdc-icon>
+      <span>Buttons</span>
+    </a>
+  </header>
+
+
+  <main>
+
+    <h4>labeled</h4>
+
+    <div class="demo-group-spaced">
+      <mdc-button label="Normal"></mdc-button>
+      <mdc-button class="light" raised label="raised"></mdc-button>
+      <mdc-button unelevated label="unelevated"></mdc-button>
+      <mdc-button outlined label="outlined"></mdc-button>
+      <mdc-button class="pink" dense label="dense"></mdc-button>
+      <mdc-button class="pink wide" raised label="wide"></mdc-button>
+      <mdc-button disabled label="disabled"></mdc-button>
+    </div>
+
+    <h4>not labeled</h4>
+
+    <mdc-button>Normal</mdc-button>
+
+    <h4>icon labeled</h4>
+
+    <div class="demo-group-spaced">
+      <mdc-button label="Normal" icon="explore"></mdc-button>
+      <mdc-button class="light" raised label="raised" icon="code"></mdc-button>
+      <mdc-button unelevated label="unelevated" icon="check"></mdc-button>
+      <mdc-button outlined label="outlined" icon="alarm"></mdc-button>
+      <mdc-button class="pink" dense label="dense" icon="feedback"></mdc-button>
+      <mdc-button class="pink wide" raised label="wide" icon="code"></mdc-button>
+      <mdc-button disabled label="disabled" icon="fingerprint"></mdc-button>
+    </div>
+
+    <h4>trailing icon labeled</h4>
+
+    <mdc-button label="Normal" icon="explore" trailing-icon></mdc-button>
+
+  </main>
+
+</body>
+
+</html>
