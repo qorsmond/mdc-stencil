@@ -1,1 +1,0 @@
-import{r as t,h as r}from"./p-a9cf0e7d.js";class e{constructor(r){t(this,r)}render(){return r("div",null,"Hello, World! I'm ",this.first)}static get style(){return""}}export{e as my_component};

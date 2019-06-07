@@ -19,7 +19,6 @@ export const config: Config = {
     },
     {
       type: 'www',
-      dir: 'docs',
       copy: [
         { src: 'demos' }
       ],
