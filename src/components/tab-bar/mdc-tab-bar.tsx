@@ -12,7 +12,7 @@ export class TabBar {
   /**
    * Should a bottom border be displayed
    */
-  @Prop() bottomBorder = true;
+  @Prop() bottomBorder = false;
 
   componentDidLoad() {
     this.el.classList.add('mdc-tab-bar');

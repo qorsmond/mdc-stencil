@@ -47,9 +47,17 @@ export namespace Components {
   interface MdcIcon {}
   interface MdcTab {
     /**
+    * Set a href, this will convert the tab to use an anchor tag
+    */
+    'href': string;
+    /**
     * The icon
     */
     'icon': string;
+    /**
+    * The tab id
+    */
+    'id': string;
     /**
     * The label
     */
@@ -189,9 +197,17 @@ declare namespace LocalJSX {
   interface MdcIcon extends JSXBase.HTMLAttributes<HTMLMdcIconElement> {}
   interface MdcTab extends JSXBase.HTMLAttributes<HTMLMdcTabElement> {
     /**
+    * Set a href, this will convert the tab to use an anchor tag
+    */
+    'href'?: string;
+    /**
     * The icon
     */
     'icon'?: string;
+    /**
+    * The tab id
+    */
+    'id'?: string;
     /**
     * The label
     */

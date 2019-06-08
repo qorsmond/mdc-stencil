@@ -1,6 +1,6 @@
 {
   "name": "mdc-stencil",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Material Design implemented using the Stencil Compiler for Web Components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
